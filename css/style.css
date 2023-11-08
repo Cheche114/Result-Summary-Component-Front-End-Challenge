@@ -14,15 +14,16 @@ body{
     font-family: 'HankenGrotesk';  
     font-size: 18px;
     line-height: 1.7;
-    max-width: 1440px;
+    width: 80%;
     margin: 100px auto;
-    padding: 4rem;
+    padding: 0 2rem;
 }
 
 .container{
     background: #fff;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    width: 80%;
+    margin: auto;
+    display: flex;
     border-radius: 20px;
     box-shadow: hsla(241, 100%, 89%, 0.5) 20px 10px 20px 20px;
 }
@@ -35,6 +36,7 @@ button{
     padding: 15px;
     border: none;
     border-radius: 40px;
+    margin-bottom: 20px;
 }
 
 button:hover{
@@ -43,52 +45,48 @@ button:hover{
     cursor: pointer;
 }
 
-img{
-    padding-right: 10px;
-}
-
 h2{
     margin-bottom: 20px;
 }
 
 .bg-grad{
-    background: linear-gradient(#7857ff, #2e2be9);
+    background: linear-gradient( to top, #2421ca, #7857ff);
     color: #fff;
+    text-align: center;
     padding: 1.5em;
     border-radius: 20px;
+    width: 55%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .phrase{
     color: hsla(0, 0%, 100%, 0.8);
     font-size: 1.5em;
-    text-align: center;
     margin-bottom: 1.7em;
 }
 
 .circle-grad{
-    background: linear-gradient(#4e21ca, #2421ca);
-    height: 40%;
-    width: 45%;
-    padding: 5%;
-    text-align: center;
+    background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), 
+    hsla(241, 72%, 46%, 0.1));
+    align-self: center;
+    width: 50%;
+    height: 180px;
     border-radius: 50%;
-    margin-left: 28%;
     margin-bottom: 2.5em;
 }
 
 .score{
-    font-size: 4em;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 1;
-    margin-top: 0.6em;
+    margin-top: 3rem;
 }
 
 .sub-score{
-    color: hsla(0, 0%, 100%, 0.7);
-}
-
-.quote{
-    text-align: center;
+    font-size: 1.2rem;
+    color: hsla(0, 0%, 100%, 0.8);
 }
 
 .highlight{
@@ -101,40 +99,42 @@ h2{
 }
 
 .main-card{
-    padding:3em;
+    padding: 1.5em;
+    width: 50%;
+    margin: auto;
+}
+
+.reaction-bar,.verbal-bar,
+.visual-bar,.memory-bar{
+    display: flex;
+    justify-content: space-between;
 }
 
 .reaction-bar{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     background: hsla(0, 100%, 67%, 0.1);
     padding: 10px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .memory-bar{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     background: hsla(39, 100%, 56%, 0.1);
     padding: 10px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .verbal-bar{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     background: hsla(166, 100%, 37%, 0.1);
     padding: 10px;
     border-radius: 10px;
 }
 
 .visual-bar{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     background: hsla(234, 85%, 45%, 0.1);
     padding: 10px;
     border-radius: 10px;
@@ -162,28 +162,32 @@ span{ color: rgba(0, 0, 0, 0.6); }
 
 @media (max-width:768px){
     .container{
-        display: block;
+        flex-direction: column;
     }
 
-    .sub-score{
-        padding-bottom: 2em;
+    .bg-grad{
+        width: 100%; 
     }
 
     .main-card{
-        padding: 1em;
-    }
-
-    .reaction-bar,
-    .memory-bar,
-    .verbal-bar,
-    .visual-bar{
-        margin-bottom: 1.5em;
+        width: 100%;
     }
 }
 
-@media (max-width:425px){
-    .circle-grad{
-        width: 70%;
-        margin-left: 15%;
+@media (max-width:480px){
+    body{
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container{
+        width: 100%;
+    }
+
+    .bg-grad{
+        width: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
     }
 }
